@@ -1,0 +1,83 @@
+<div class="table">
+
+  <!--HEADER-->
+  <div class="row-container header">
+    <div class="row ">
+      <div class="freeze">
+        <div class="cell cursor" style="visibility:hidden">
+          <div class="arrow"></div>
+        </div>
+        <div class="cell">
+          <input type="checkbox">
+        </div>
+
+        <ng-container *ngFor="let cell of header; let index = index;">
+          <div class="cell" style="width: 100px" *ngIf="map[index]">
+            Header {{cell}}
+            <div class="border"></div>
+          </div>
+        </ng-container>
+
+      </div>
+      <div class="not-freeze">
+        <ng-container *ngFor="let cell of header; let index = index;">
+          <div class="cell"  *ngIf="!map[index]">
+            Header {{cell}}
+            <svg (click)="pin(index)" style="margin-left: auto; cursor: pointer" width="18px"
+                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="imx-icons_pin-left" fit=""
+                 preserveAspectRatio="xMidYMid meet" focusable="false">
+              <path
+                d="M15.18 2.25l7.07 7.07-2.83-.01-3.54 3.55.01 4.24-3.53-3.54-5.66 5.66H5.28V17.8l5.66-5.66L7.4 8.61l4.24.01 3.55-3.54-.01-2.83z"></path>
+            </svg>
+            <div class="border"></div>
+          </div>
+        </ng-container>
+
+      </div>
+    </div>
+  </div>
+
+  <!--  ROWS DATA-->
+  <div class="row-container" *ngFor="let row of rows">
+    <div class="row">
+      <div class="freeze">
+        <div class="cell cursor" (click)="row.open = !row?.open">
+          <div class="arrow" [class.open]="row?.open"></div>
+        </div>
+        <div class="cell">
+          <input type="checkbox">
+        </div>
+
+        <ng-container *ngFor="let cell of row.cells; let index = index;">
+          <div class="cell" style="width: 100px" *ngIf="map[index]">
+            Cell {{cell}}
+            <div class="border"></div>
+          </div>
+        </ng-container>
+
+
+      </div>
+      <div class="not-freeze">
+        <ng-container *ngFor="let cell of row.cells; let index = index;">
+          <div class="cell" *ngIf="!map[index]">
+            Cell {{cell}}
+            <div class="border"></div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <div class="expand-row-container" *ngIf="row?.open">
+      <div class="inner-expand-row-data" *ngFor="let row of [1,2,3]">
+        <div class="flex-column">
+          <div class="text1">Latest Detection in Group</div>
+          <div class="text2">Thunderbirder Vulnerable.doc</div>
+          <div class="actions">
+            <button class="primary-btn">View All Threats</button>
+            <button class="secondary-btn">View Threat Details</button>
+            <button class="link-btn">View in VirusTotal</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
