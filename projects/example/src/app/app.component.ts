@@ -74,4 +74,8 @@ export class AppComponent {
   pin(index: number): void {
     this.map[index] = true;
   }
+
+  unpin(index: number): void {
+    delete this.map[index];
+  }
 }

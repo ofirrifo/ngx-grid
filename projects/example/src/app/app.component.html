@@ -14,6 +14,11 @@
         <ng-container *ngFor="let cell of header; let index = index;">
           <div class="cell" style="width: 100px" *ngIf="map[index]">
             Header {{cell}}
+            <svg (click)="unpin(index)" style="margin-left: auto; cursor: pointer" width="18px"
+              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="imx-icons_unpin-left" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+              <path d="M11.8,14.1l-5.1,5.1H5.3v-1.4l5.1-5.1L2,4.3L3.3,3l18,18L20,22.2L11.8,14.1z M15.8,13.6l-5-5h0.7L15.1,5V2.2l7.1,7.1h-2.8l-3.5,3.5L15.8,13.6z">
+              </path>
+            </svg>
             <div class="border"></div>
           </div>
         </ng-container>
@@ -38,7 +43,7 @@
   </div>
 
   <!--  ROWS DATA-->
-  <div class="row-container" *ngFor="let row of rows">
+  <div class="row-container" *ngFor="let row of rows;">
     <div class="row">
       <div class="freeze">
         <div class="cell cursor" (click)="row.open = !row?.open">
