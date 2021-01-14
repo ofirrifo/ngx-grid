@@ -53,6 +53,10 @@
       background: #f4f4f4;
     }
 
+    &.open{
+      background: #faf7fe;
+    }
+
     .freeze {
       position: sticky;
       left: 0;
