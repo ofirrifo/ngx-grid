@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InputModule } from '../../../sentinelone-components-lib/src/lib/modules/form/input/input.module';
+import { CheckboxModule } from 'sentinelone-components-lib';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { InputModule } from '../../../sentinelone-components-lib/src/lib/modules
   imports: [
     BrowserModule,
     AppRoutingModule,
-    InputModule
+    InputModule,
+    CheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

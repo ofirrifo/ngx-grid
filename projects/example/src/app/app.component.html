@@ -8,7 +8,10 @@
           <div class="arrow"></div>
         </div>
         <div class="cell">
-          <input type="checkbox">
+          <soc-checkbox
+            (click)="headerCheckboxClicked()"
+            [checked]="headerCheckbox">
+          </soc-checkbox>
         </div>
 
         <ng-container *ngFor="let cell of header; let index = index;">
@@ -50,7 +53,8 @@
           <div class="arrow" [class.open]="row?.open"></div>
         </div>
         <div class="cell">
-          <input type="checkbox">
+          <soc-checkbox (click)="rowCbClicked(row)" [checked]="row.checked">
+          </soc-checkbox>
         </div>
 
         <ng-container *ngFor="let cell of row.cells; let index = index;">
