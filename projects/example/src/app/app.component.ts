@@ -55,7 +55,6 @@ export class AppComponent {
     if (row.checked === false) {
       this.headerCheckbox = false;
     } else {
-      debugger
       this.headerCheckbox = this.rows.find((_row: any) => !_row.checked) === void 0;
     }
   }
