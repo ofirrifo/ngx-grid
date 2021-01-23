@@ -47,7 +47,7 @@
 
   <!--  ROWS DATA-->
   <div class="row-container" *ngFor="let row of rows;">
-    <div class="row" [class.open]="row.open">
+    <div class="row" [class.open]="row.open" [class.selected]="row.checked">
       <div class="freeze">
         <div class="cell cursor" (click)="row.open = !row?.open">
           <div class="arrow" [class.open]="row?.open"></div>
