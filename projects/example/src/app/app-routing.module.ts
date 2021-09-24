@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { InputModule, CheckboxModule } from 'sentinelone-components-lib';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {InputModule} from '../../../sentinelone-components-lib/src/lib/modules/form/input/input.module';
+import {CheckboxModule} from '../../../sentinelone-components-lib/src/lib/modules/form/checkbox/checkbox.module';
 
 
 
